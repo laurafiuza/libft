@@ -6,7 +6,7 @@
 /*   By: lfiuza <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/18 17:43:29 by lfiuza            #+#    #+#             */
-/*   Updated: 2018/06/21 13:50:55 by lfiuza           ###   ########.fr       */
+/*   Updated: 2018/06/25 17:38:03 by lfiuza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,17 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	while (*s)
+	char	*to_return;
+
+	to_return = (char *)s;
+	
+	while (*to_return)
 	{
-		if (*s == c)
-			return (*s);
-		s++;
+		if (*to_return == (unsigned char)c)
+			return (to_return);
+		to_return++;
 	}
-	if (*s == c)
-		return (*s);
+	if (*to_return == (unsigned char)c)
+		return (to_return);
 	return (NULL);
 }

@@ -6,7 +6,7 @@
 /*   By: lfiuza <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/21 09:58:06 by lfiuza            #+#    #+#             */
-/*   Updated: 2018/06/21 14:00:53 by lfiuza           ###   ########.fr       */
+/*   Updated: 2018/06/25 17:51:56 by lfiuza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 
 void	ft_putendl(char const *s)
 {
-	ft_putstr(*s);
-	ft_putstr("\n");
+	char	*to_print;
+
+	to_print = (char *)s;
+	ft_putstr(to_print);
+	ft_putchar('\n');
 }

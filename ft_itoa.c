@@ -6,7 +6,7 @@
 /*   By: lfiuza <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/21 09:30:47 by lfiuza            #+#    #+#             */
-/*   Updated: 2018/06/21 13:59:09 by lfiuza           ###   ########.fr       */
+/*   Updated: 2018/06/25 17:50:32 by lfiuza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,8 @@ char		*ft_itoa(int n)
 		long_num = (long)n * -1;
 		negative++;
 	}
+	else
+		long_num = (long)n;
 	digits += how_many_digits(long_num);
 	itoa = (char *)malloc(sizeof(char) * (digits + 1));
 	itoa[digits] = '\0';
