@@ -6,20 +6,21 @@
 /*   By: lfiuza <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/19 12:38:34 by lfiuza            #+#    #+#             */
-/*   Updated: 2018/06/21 13:54:52 by lfiuza           ###   ########.fr       */
+/*   Updated: 2018/06/25 15:46:53 by lfiuza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	bzero(void *s, size_t n)
+void	ft_bzero(void *s, size_t n)
 {
 	size_t	i;
 
 	i = 0;
 	while (i < n)
 	{
-		(char *)s[i] = 0;
+		*(char *)s = 0;
+		s++;
 		i++;
 	}
 }

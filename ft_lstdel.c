@@ -1,22 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_striter.c                                       :+:      :+:    :+:   */
+/*   ft_lstdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lfiuza <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/06/19 20:56:33 by lfiuza            #+#    #+#             */
-/*   Updated: 2018/06/25 16:01:31 by lfiuza           ###   ########.fr       */
+/*   Created: 2018/06/21 14:07:08 by lfiuza            #+#    #+#             */
+/*   Updated: 2018/06/25 17:08:02 by lfiuza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_striter(char *s, void (*f)(char *))
+void	ft_lstdel(t_list **alst, void (*del)(void *, size_t))
 {
-	while (*s)
-	{
-		(*f)(s);
-		s++;
-	}
+	if ((*alst)->next)
+		ft_lstdel(&(*alst)->next, (*del));
+	ft_lstdelone(&(*alst), (*del));
 }
