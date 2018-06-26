@@ -6,7 +6,7 @@
 /*   By: lfiuza <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/21 10:12:40 by lfiuza            #+#    #+#             */
-/*   Updated: 2018/06/26 14:12:09 by lfiuza           ###   ########.fr       */
+/*   Updated: 2018/06/26 14:27:23 by lfiuza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ void	ft_putnbr_fd(int n, int fd)
 	else if (n >= 10)
 	{
 		ft_putnbr_fd(n / 10, fd);
-		ft_putchar(n % 10 + '\0', fd);
+		ft_putchar_fd(n % 10 + '\0', fd);
 	}
 	else
-		ft_putchar(n + '0', fd);
+		ft_putchar_fd(n + '0', fd);
 }
