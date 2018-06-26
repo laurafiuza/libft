@@ -6,63 +6,33 @@
 /*   By: lfiuza <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/21 09:30:47 by lfiuza            #+#    #+#             */
-/*   Updated: 2018/06/25 17:50:32 by lfiuza           ###   ########.fr       */
+/*   Updated: 2018/06/26 14:06:35 by lfiuza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	how_many_digits(long pos_num)
+char	*ft_itoa(int n)
 {
-	int n;
-
-	n = 0;
-	while (pos_num >= 0)
-	{
-		n++;
-		pos_num /= 10;
-	}
-	return (n);
-}
-
-static char	*actual_itoa(char *itoa, int negative, long pos_num)
-{
-	int i;
-
-	i = 0;
-	if (negative)
-	{
-		itoa[i] = '-';
-		i++;
-	}
-	while (pos_num >= 0)
-	{
-		itoa[i] = (pos_num % 10);
-		i++;
-		pos_num /= 10;
-	}
-	return (itoa);
-}
-
-char		*ft_itoa(int n)
-{
-	int		digits;
-	int		negative;
-	long	long_num;
 	char	*itoa;
 
-	digits = 0;
-	negative = 0;
-	if ((long)n < 0)
+	itoa = (char *)malloc(sizeof(char) * 2);
+	if (!itoa)
+		return (NULL);
+	if (n == -2147483648)
+		return (ft_strcpy(itoa, "-2147483648"));
+	if (n < 0)
 	{
-		digits++;
-		long_num = (long)n * -1;
-		negative++;
+		itoa[0] = '-';
+		itoa[1] = '\0';
+		itoa = ft_strjoin(itoa, ft_itoa(-n));
 	}
-	else
-		long_num = (long)n;
-	digits += how_many_digits(long_num);
-	itoa = (char *)malloc(sizeof(char) * (digits + 1));
-	itoa[digits] = '\0';
-	return (actual_itoa(itoa, negative, long_num));
+	else if (n >= 10)
+		itoa = ft_strjoin(ft_itoa(n / 10), ft_itoa(n % 10));
+	else if (n < 10 && n >= 0)
+	{
+		itoa[0] = n + '0';
+		itoa[1] = '\0';
+	}
+	return (itoa);
 }

@@ -6,7 +6,7 @@
 /*   By: lfiuza <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/19 21:51:18 by lfiuza            #+#    #+#             */
-/*   Updated: 2018/06/21 14:06:07 by lfiuza           ###   ########.fr       */
+/*   Updated: 2018/06/26 13:53:32 by lfiuza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,7 @@
 
 static int	is_ws(char c)
 {
-	if (c == '\n' || c == '\t' || c == ' ')
-		return (1);
-	return (0);
+	return (c == '\n' || c == '\t' || c == ' ');
 }
 
 char		*ft_strtrim(char const *s)
@@ -33,6 +31,8 @@ char		*ft_strtrim(char const *s)
 	while (s[i])
 	{
 		if (is_ws(s[i]) && !is_ws(s[i - 1]))
+			end = i;
+		if (!is_ws(s[i]) && !s[i + 1])
 			end = i;
 		i++;
 	}

@@ -6,7 +6,7 @@
 /*   By: lfiuza <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/18 17:51:36 by lfiuza            #+#    #+#             */
-/*   Updated: 2018/06/25 17:40:47 by lfiuza           ###   ########.fr       */
+/*   Updated: 2018/06/26 12:23:03 by lfiuza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ char	*ft_strstr(const char *haystack, const char *needle)
 	{
 		while (*big)
 		{
-			if (ft_strcmp(big, small) == 0)
+			if (ft_strncmp(big, small, ft_strlen(small)) == 0)
 				return (big);
 			big++;
 		}
