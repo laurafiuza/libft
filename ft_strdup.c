@@ -6,7 +6,7 @@
 /*   By: lfiuza <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/18 16:44:50 by lfiuza            #+#    #+#             */
-/*   Updated: 2018/06/25 20:08:00 by lfiuza           ###   ########.fr       */
+/*   Updated: 2018/06/26 15:47:39 by lfiuza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@ char	*ft_strdup(const char *s1)
 	size_t	len;
 	char	*s2;
 
-	if (!s1)
-		return (NULL);
 	len = ft_strlen(s1);
 	s2 = (char *)malloc(sizeof(char) * (len + 1));
 	if (!s2)

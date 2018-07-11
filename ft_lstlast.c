@@ -1,34 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lfiuza <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/06/21 09:59:34 by lfiuza            #+#    #+#             */
-/*   Updated: 2018/07/10 16:17:09 by lfiuza           ###   ########.fr       */
+/*   Created: 2018/06/26 19:38:59 by lfiuza            #+#    #+#             */
+/*   Updated: 2018/06/26 19:39:59 by lfiuza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnbr(int n)
+t_list	*ft_lstlast(t_list *begin_list)
 {
-	if (n == -2147483648)
-	{
-		write(1, "-2147483648", 11);
-		return ;
-	}
-	if (n < 0)
-	{
-		write(1, "-", 1);
-		n *= -1;
-	}
-	if (n < 10)
-		ft_putchar('0' + n);
-	else
-	{
-		ft_putnbr(n / 10);
-		ft_putnbr(n % 10);
-	}
+	while (begin_list->next)
+		begin_list = begin_list->next;
+	return (begin_list);
 }

@@ -6,7 +6,7 @@
 /*   By: lfiuza <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/19 22:16:25 by lfiuza            #+#    #+#             */
-/*   Updated: 2018/06/21 14:05:29 by lfiuza           ###   ########.fr       */
+/*   Updated: 2018/06/26 21:50:52 by lfiuza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,8 @@ char		**ft_strsplit(char const *s, char c)
 	int		words;
 	char	**arr_words;
 
+	if (!s)
+		return (NULL);
 	words = num_words(s, c);
 	arr_words = (char **)malloc(sizeof(char *) * (words + 1));
 	if (!arr_words)

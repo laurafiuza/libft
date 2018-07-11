@@ -6,7 +6,7 @@
 /*   By: lfiuza <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/21 13:01:36 by lfiuza            #+#    #+#             */
-/*   Updated: 2018/06/25 19:28:25 by lfiuza           ###   ########.fr       */
+/*   Updated: 2018/07/10 16:13:53 by lfiuza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,20 +16,12 @@
 # include <unistd.h>
 # include <stdlib.h>
 
-/*
- **	list struct
- */
-
 typedef struct	s_list
 {
 	void			*content;
 	size_t			content_size;
 	struct s_list	*next;
 }				t_list;
-
-/*
- ** part_1 functions
- */
 
 int				ft_atoi(const char *str);
 void			ft_bzero(void *s, size_t n);
@@ -54,16 +46,16 @@ char			*ft_strdup(const char *s1);
 size_t			ft_strlcat(char *restrict dst, const char *restrict src,
 				size_t dstsize);
 size_t			ft_strlen(const char *s);
-char			*ft_strncat(char *restrict s1, const char *restrict s2, size_t n);
+char			*ft_strncat(char *restrict s1, const char *restrict s2,
+				size_t n);
 int				ft_strncmp(const char *s1, const char *s2, size_t n);
 char			*ft_strncpy(char *dst, const char *src, size_t len);
-char			*ft_strnstr(const char *haystack, const char *needle, size_t len);
+char			*ft_strnstr(const char *haystack, const char *needle,
+				size_t len);
 char			*ft_strrchr(const char *s, int c);
 char			*ft_strstr(const char *haystack, const char *needle);
-
-/*
- ** part_2 functions
- */
+int				ft_tolower(int c);
+int				ft_toupper(int c);
 
 char			*ft_itoa(int n);
 void			*ft_memalloc(size_t size);
@@ -90,14 +82,17 @@ char			**ft_strsplit(char const *s, char c);
 char			*ft_strsub(char const *s, unsigned int start, size_t len);
 char			*ft_strtrim(char const *s);
 
-/*
- ** bonus functions
- */
-
+int				ft_isws(char c);
 void			ft_lstadd(t_list **alst, t_list *new);
 void			ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 void			ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
 void			ft_lstiter(t_list *lst, void (*f)(t_list *elem));
+t_list			*ft_lstlast(t_list *begin_list);
 t_list			*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
+t_list			*ft_lstnew(void const *content, size_t content_size);
+void			ft_lstpushback(t_list **begin_list, void *content,
+				size_t content_size);
+int				ft_lstsize(t_list *begin_list);
+void			ft_swap(int *a, int *b);
 
 #endif

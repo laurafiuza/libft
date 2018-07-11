@@ -6,7 +6,7 @@
 /*   By: lfiuza <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/18 17:51:36 by lfiuza            #+#    #+#             */
-/*   Updated: 2018/06/26 12:23:03 by lfiuza           ###   ########.fr       */
+/*   Updated: 2018/06/26 21:17:02 by lfiuza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ char	*ft_strstr(const char *haystack, const char *needle)
 
 	big = (char *)haystack;
 	small = (char *)needle;
-	
 	if (*small)
 	{
 		while (*big)

@@ -6,7 +6,7 @@
 /*   By: lfiuza <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/19 21:10:51 by lfiuza            #+#    #+#             */
-/*   Updated: 2018/06/26 13:16:17 by lfiuza           ###   ########.fr       */
+/*   Updated: 2018/06/26 21:49:16 by lfiuza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	unsigned int	i;
 	char			*fresh;
 
+	if (!s)
+		return (NULL);
 	n = 0;
 	while (s[n])
 		n++;

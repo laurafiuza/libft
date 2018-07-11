@@ -6,7 +6,7 @@
 /*   By: lfiuza <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/18 16:57:41 by lfiuza            #+#    #+#             */
-/*   Updated: 2018/06/25 20:12:45 by lfiuza           ###   ########.fr       */
+/*   Updated: 2018/06/26 14:55:20 by lfiuza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,11 @@ char	*ft_strncpy(char *dst, const char *src, size_t len)
 	size_t	i;
 
 	i = 0;
-	while (dst[i] && src[i] && i < len)
+	ft_bzero(dst, len);
+	while (src[i] && i < len)
 	{
 		dst[i] = src[i];
 		i++;
 	}
-	dst[i] = '\0';
 	return (dst);
 }

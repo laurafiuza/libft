@@ -1,34 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_lstpushback.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lfiuza <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/06/21 09:59:34 by lfiuza            #+#    #+#             */
-/*   Updated: 2018/07/10 16:17:09 by lfiuza           ###   ########.fr       */
+/*   Created: 2018/06/26 19:30:31 by lfiuza            #+#    #+#             */
+/*   Updated: 2018/06/26 20:11:00 by lfiuza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnbr(int n)
+void	ft_lstpushback(t_list **begin_list, void *content, size_t content_size)
 {
-	if (n == -2147483648)
-	{
-		write(1, "-2147483648", 11);
-		return ;
-	}
-	if (n < 0)
-	{
-		write(1, "-", 1);
-		n *= -1;
-	}
-	if (n < 10)
-		ft_putchar('0' + n);
+	t_list	*list;
+
+	list = *begin_list;
+	if (!list)
+		list = ft_lstnew(content, content_size);
 	else
 	{
-		ft_putnbr(n / 10);
-		ft_putnbr(n % 10);
+		while (list->next)
+			list = list->next;
+		list->next = ft_lstnew(content, content_size);
 	}
 }
